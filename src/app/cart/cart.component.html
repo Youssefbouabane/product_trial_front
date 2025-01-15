@@ -1,0 +1,35 @@
+<div class="cart-popup">
+  <div class="cart-header">
+    <h3>Panier</h3>
+  </div>
+  <p-dataView #dv [value]="products">
+    <ng-template pTemplate="list" let-products>
+        @for (product of products; track product) {
+            <p-card class="block mb-2">
+                <div class="text-lg font-medium text-900 mt-2">{{ product.product.name }} - {{ product.product.price }} £  </div>
+
+                <ng-template pTemplate="footer">
+                    <div class="panel-container flex gap-3 mt-1">
+                        <button label="plus" class="pi pi-plus p-button" severity="secondary" (click)="addOne(product)"></button>
+                        <span class="font-medium text-secondary  text-bg">{{ product.quantity }}</span>
+                        <button label="minus" class="pi pi-minus p-button" severity="secondary" (click)="removeOne(product)"></button>
+                        <button label="Supprimer" class="pi pi-trash" severity="danger" (click)="onDelete(product)"></button>
+                    </div>
+                </ng-template>
+            </p-card>
+        }
+    </ng-template>
+    <ng-template pTemplate="empty">
+      <div class="text-center text-secondary">
+        Le panier est vide
+      </div>
+  </ng-template>
+</p-dataView>
+
+<div class="cart-summary text-left mb-3">
+  <p>Prix total : <b> {{ totalPrice }} </b>£</p>
+  <p>Quantité totale : <b> {{  totalQuantity }} </b></p>
+</div>
+
+
+</div>

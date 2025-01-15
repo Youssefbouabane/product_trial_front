@@ -1,0 +1,32 @@
+<br><br>
+<div class="contact-form-container">
+  <br>
+  <h1>Contactez Nous</h1>
+  <br><br>
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" placeholder="Entrer votre email">
+      <div *ngIf="submitted && contactForm.controls.email.errors" class="error">
+        <span *ngIf="contactForm.controls.email.errors.required">Email est obligatoire.</span>
+        <span *ngIf="contactForm.controls.email.errors.email">Entrer un email valide.</span>
+      </div>
+    </div>
+
+    <div>
+      <label for="message">Message</label>
+      <textarea id="message" formControlName="message" placeholder="Entrer votre message"></textarea>
+      <div *ngIf="submitted && contactForm.controls.message.errors" class="error">
+        <span *ngIf="contactForm.controls.message.errors.required">Message est obligatoire.</span>
+        <span *ngIf="contactForm.controls.message.errors.maxlength">Message doit avoir moins de 300 characters.</span>
+      </div>
+    </div>
+
+    <button type="submit">Envoyer</button>
+
+    <div *ngIf="successMessage" class="success">
+      {{ successMessage }}
+    </div>
+  </form>
+  <br>
+</div>

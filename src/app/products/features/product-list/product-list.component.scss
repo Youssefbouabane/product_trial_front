@@ -1,0 +1,114 @@
+:host {
+  display: block;
+  height: 100%;
+  overflow: auto;
+}
+
+.status{
+width: 100px;
+height: 30px;
+border: 1px solid #eee6e6;
+border-radius: 3px;
+padding: 3px;
+margin-left: 10px;
+font-size: 12px;
+color: #FFF;
+
+}
+
+.status-INSTOCK{
+  background-color: #106405;
+
+}
+
+.status-LOWSTOCK{
+  background-color: #d36a07;
+
+}
+
+.status-OUTOFSTOCK{
+  background-color: #970505;
+}
+
+::ng-deep .p-paginator {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 10px 0;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+::ng-deep .p-paginator .p-paginator-pages .p-paginator-page {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin: 0 4px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+::ng-deep .p-paginator .p-paginator-pages .p-paginator-page:hover {
+  background-color: #0056b3;
+}
+
+::ng-deep .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  background-color: #1dd3e0;
+  font-weight: bold;
+}
+
+::ng-deep .p-paginator .p-paginator-prev,
+::ng-deep .p-paginator .p-paginator-next {
+  color: #007bff;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::ng-deep .p-paginator .p-paginator-prev:hover,
+::ng-deep .p-paginator .p-paginator-next:hover {
+  color: white;
+  background-color: #0056b3;
+}
+
+::ng-deep .p-paginator .p-paginator-prev.p-disabled,
+::ng-deep .p-paginator .p-paginator-next.p-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.filter-input-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.filter-input {
+  width: 50%;
+  max-width: 500px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.filter-input:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.filter-input::placeholder {
+  color: #6c757d;
+}
+
+.filter-input-container .filter-input {
+  margin-right: 10px;
+}
+
+
